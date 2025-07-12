@@ -1,0 +1,354 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fffdf7;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  color: #343a40;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #212529;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  background: linear-gradient(to right, #fef9e7, #fff9c4);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: #212529 !important;
+  font-size: 22px;
+}
+
+.nav-link {
+  color: #495057 !important;
+  margin-left: 16px;
+  transition: color 0.3s ease;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.hero {
+  background: linear-gradient(to right, #ffe29f, #ffc107);
+  padding: 100px 20px;
+  text-align: center;
+  color: #212529;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.btn-main {
+  background: linear-gradient(to right, #ffca28, #ffb300);
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-main:hover {
+  background: linear-gradient(to right, #ffb300, #ffca28);
+  transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+  border: 1px solid #ffc107;
+  color: #ffc107;
+  background: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #ffc107;
+  color: white;
+}
+
+.product-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 24px;
+  padding-bottom: 16px;
+  scroll-behavior: smooth;
+  margin-bottom: 32px;
+}
+
+.product-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.product-scroll::-webkit-scrollbar-thumb {
+  background-color: #ffc107;
+  border-radius: 10px;
+}
+
+.card-product {
+  min-width: 320px;
+  max-width: 340px;
+  flex-shrink: 0;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-product .img-wrapper {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-product .img-wrapper img {
+  max-height: 90%;
+  max-width: 90%;
+  object-fit: contain;
+  display: block;
+}
+
+.card-product .card-body {
+  padding: 16px 16px 24px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-product .form-control {
+  max-width: 100px;
+  margin-inline: auto;
+}
+
+/* === CART TABLE WRAPPER === */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.table {
+  min-width: 700px; /* agar scroll muncul di mobile */
+  background-color: #fff;
+}
+
+/* === TOMBOL DALAM TABEL === */
+.table .btn-sm {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+/* === TABEL CART === */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 24px;
+  border-radius: 8px;
+}
+
+.table {
+  min-width: 800px; /* Lebar minimum agar scroll aktif di layar kecil */
+  background-color: #fff;
+  border-collapse: collapse;
+}
+
+/* Header tabel */
+.table thead th {
+  background-color: #fff9c4;
+  color: #212529;
+  font-weight: 600;
+  text-align: center;
+  padding: 12px 8px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+/* Sel isi */
+.table tbody td {
+  text-align: center;
+  padding: 10px 6px;
+  vertical-align: middle;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* === TOMBOL JUMLAH PRODUK === */
+.table .btn-sm {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* === RESPONSIVE MOBILE === */
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.85rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px 6px;
+  }
+
+  .btn-sm {
+    font-size: 0.75rem;
+    padding: 4px 6px;
+  }
+
+  .form-control,
+  select {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding-inline: 15px;
+  }
+
+  h2.text-main {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn {
+    padding: 8px 14px;
+  }
+}
+
+#about {
+  padding: 80px 20px;
+  background-color: #fff8dc;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+#about img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+#about .about-text {
+  max-width: 500px;
+  font-size: 18px;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+footer {
+  background: linear-gradient(to right, #ffca28, #ffe082);
+  color: #212529;
+  padding: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .btn-main {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  #about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #about img {
+    width: 100%;
+  }
+
+  #about .about-text {
+    max-width: 100%;
+  }
+
+  .product-scroll {
+    padding: 0px 10px 20px;
+  }
+
+  .card-product {
+    min-width: 240px;
+    max-width: 260px;
+  }
+
+  .card-product .img-wrapper {
+    height: 200px;
+  }
+
+  .card-product .card-body {
+    padding: 12px;
+  }
+
+  .card-product .btn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
