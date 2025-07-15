@@ -1,15 +1,9 @@
 import { useEffect } from 'react';
 
 function About() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <section id="about" className="py-5" style={{ backgroundColor: '#fff8dc' }}>
       <div className="container fade-in">
-
-        {/* Tentang Kami */}
         <div className="mb-5 text-center">
           <h2 className="mb-3" style={{ color: '#2c3e50' }}>Tentang J-Shirt</h2>
           <p className="text-muted" style={{ maxWidth: '700px', margin: '0 auto' }}>

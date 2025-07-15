@@ -152,76 +152,7 @@ a {
   margin-inline: auto;
 }
 
-/* === CART TABLE WRAPPER === */
-.table-responsive {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 20px;
-  border-radius: 8px;
-}
-
-.table {
-  min-width: 700px; /* agar scroll muncul di mobile */
-  background-color: #fff;
-}
-
-/* === TOMBOL DALAM TABEL === */
-.table .btn-sm {
-  padding: 4px 8px;
-  font-size: 0.8rem;
-}
-/* === TABEL CART === */
-.table-responsive {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 24px;
-  border-radius: 8px;
-}
-
-.table {
-  min-width: 800px; /* Lebar minimum agar scroll aktif di layar kecil */
-  background-color: #fff;
-  border-collapse: collapse;
-}
-
-/* Header tabel */
-.table thead th {
-  background-color: #fff9c4;
-  color: #212529;
-  font-weight: 600;
-  text-align: center;
-  padding: 12px 8px;
-  border-bottom: 2px solid #dee2e6;
-}
-
-/* Sel isi */
-.table tbody td {
-  text-align: center;
-  padding: 10px 6px;
-  vertical-align: middle;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-/* === TOMBOL JUMLAH PRODUK === */
-.table .btn-sm {
-  font-size: 0.8rem;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-/* === RESPONSIVE MOBILE === */
 @media (max-width: 768px) {
-  .table {
-    font-size: 0.85rem;
-  }
-
-  .table th,
-  .table td {
-    padding: 8px 6px;
-  }
-
   .btn-sm {
     font-size: 0.75rem;
     padding: 4px 6px;

@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import { useCart } from '../context/CartContext'
-import { useNavigate } from 'react-router-dom'
 import kaospolos from '../assets/kaospolos.jpg'
 import kemeja from '../assets/kemeja.jpg'
 import Polo from '../assets/Polo.jpg'
@@ -16,9 +13,6 @@ import hoddiewanita from '../assets/hoddiewanita.jpg'
 
 
 function Products() {
-  const { addToCart } = useCart()
-  const navigate = useNavigate()
-
   const items = [
     { id: 1, name: 'Kaos Polos', price: 59000, img: kaospolos },
     { id: 2, name: 'Kemeja', price: 199000, img: kemeja },
@@ -34,55 +28,6 @@ function Products() {
     { id: 12, name: 'Hoodie Wanita', price: 279000, img: hoddiewanita },
   ]
 
-  const [quantities, setQuantities] = useState({})
-  const [selectedProduct, setSelectedProduct] = useState(null)
-  const [selectedQty, setSelectedQty] = useState(1)
-  const [selectedSize, setSelectedSize] = useState('')
-  const [actionType, setActionType] = useState('')
-
-const handleQtyChange = (id, value) => {
-  const qty = Math.max(0, parseInt(value)) || 0;
-  setQuantities(prev => ({ ...prev, [id]: qty }));
-};
-
-const openModal = (product, qty, type) => {
-  if (qty === 0) {
-    alert('Jumlah produk harus minimal 1 untuk melanjutkan.');
-    return;
-  }
-
-  setSelectedProduct(product)
-  setSelectedQty(qty)
-  setSelectedSize('')
-  setActionType(type)
-
-  const modal = new bootstrap.Modal(document.getElementById('buyModal'))
-  modal.show()
-}
-
-  const handleConfirmAction = () => {
-    if (!selectedSize) {
-      alert('Silakan pilih ukuran terlebih dahulu.')
-      return
-    }
-
-    if (actionType === 'cart') {
-      addToCart({ ...selectedProduct, size: selectedSize }, selectedQty)
-    } else if (actionType === 'buy') {
-      navigate('/checkout', {
-        state: {
-          product: selectedProduct,
-          qty: selectedQty,
-          size: selectedSize
-        }
-      })
-    }
-
-  const modal = bootstrap.Modal.getInstance(document.getElementById('buyModal'))
-  modal.hide()
-
-  document.activeElement.blur()}
-
   const renderScrollList = (items) => (
     <div className="product-scroll mb-4 fade-in">
       {items.map(product => (
@@ -92,22 +37,18 @@ const openModal = (product, qty, type) => {
             <h5 className="card-title">{product.name}</h5>
             <p className="card-text">Rp {product.price.toLocaleString()}</p>
          <div className="d-flex align-items-center justify-content-center gap-2 mb-2">
-            <button className="btn btn-sm btn-outline-secondary" onClick={() => handleQtyChange(product.id, (quantities[product.id] || 0) - 1)}>-</button>
-            <span className="fw-bold">{quantities[product.id] || 0}</span>
-            <button className="btn btn-sm btn-outline-secondary" onClick={() => handleQtyChange(product.id, (quantities[product.id] || 0) + 1)}>+</button>
+            <button className="btn btn-sm btn-outline-secondary" >-</button>
+            <span className="fw-bold">0</span>
+            <button className="btn btn-sm btn-outline-secondary" >+</button>
          </div>
 
             <button
-              className="btn btn-main mb-2"
-              disabled={(quantities[product.id] || 0) === 0}
-              onClick={() => openModal(product, quantities[product.id] || 0, 'cart')}>
+              className="btn btn-main mb-2">
               + Keranjang
             </button>
 
             <button
-              className="btn btn-outline-secondary"
-              disabled={(quantities[product.id] || 0) === 0}
-              onClick={() => openModal(product, quantities[product.id] || 0, 'buy')}>
+              className="btn btn-outline-secondary">
               Beli Sekarang
             </button>
 
@@ -127,40 +68,6 @@ const openModal = (product, qty, type) => {
 
         <h4 className="mb-3"></h4>
         {renderScrollList(items.slice(6, 12))}
-      </div>
-
-      <div className="modal fade" id="buyModal" tabIndex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="buyModalLabel">Pilih Ukuran</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-            </div>
-            <div className="modal-body">
-              {selectedProduct && (
-                <>
-                  <p><strong>{selectedProduct.name}</strong></p>
-                  <div className="mb-3">
-                    <label className="form-label">Ukuran:</label>
-                    <select className="form-select" value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>
-                      <option value="">Pilih Ukuran</option>
-                      <option>S</option>
-                      <option>M</option>
-                      <option>L</option>
-                      <option>XL</option>
-                    </select>
-                  </div>
-                </>
-              )}
-            </div>
-            <div className="modal-footer">
-              <button className="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-              <button className="btn btn-warning" onClick={handleConfirmAction}>
-                {actionType === 'buy' ? 'Lanjut Checkout' : 'Tambah ke Keranjang'}
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

@@ -5,8 +5,6 @@ import Hero from './components/Hero'
 import Products from './components/Products'
 import Footer from './components/Footer'
 import About from './pages/About'
-import Cart from './pages/Cart'
-import Checkout from './pages/Checkout'
 import ContactPage from './pages/Contact'
 
 function App() {
@@ -36,8 +34,6 @@ function App() {
           }
         />
         <Route path="/about" element={<About />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </>

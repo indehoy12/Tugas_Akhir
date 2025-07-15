@@ -59,7 +59,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse d-none d-lg-flex justify-content-end">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <button className="btn nav-link text-dark" onClick={() => handleNavigate('navbar')}>Beranda</button>
+              <button className="btn nav-link text-dark" onClick={() => handleNavigate('hero')}>Beranda</button>
             </li>
             <li className="nav-item">
               <button className="btn nav-link text-dark" onClick={() => handleNavigate('products')}>Produk</button>
@@ -69,9 +69,6 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <button className="btn nav-link text-dark" onClick={() => goToPage('/contact')}>Kontak</button>
-            </li>
-            <li className="nav-item">
-              <button className="btn nav-link text-dark" onClick={() => goToPage('/cart')}>🛒 Keranjang</button>
             </li>
           </ul>
         </div>
@@ -100,9 +97,6 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <button className="btn nav-link text-dark" onClick={() => goToPage('/contact')}>Kontak</button>
-              </li>
-              <li className="nav-item">
-                <button className="btn nav-link text-dark" onClick={() => goToPage('/cart')}>🛒 Keranjang</button>
               </li>
             </ul>
           </div>

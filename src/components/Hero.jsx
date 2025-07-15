@@ -11,8 +11,8 @@ function Hero() {
   }, []);
 
   return (
-    <header
-      className="text-center py-5 position-relative hero-section"
+    <header id="hero"
+      className= "text-center py-5 position-relative hero-section"
       style={{
         backgroundImage: bgLoaded
           ? `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url(${heroBg})`
