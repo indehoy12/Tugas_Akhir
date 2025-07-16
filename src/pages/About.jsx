@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 function About() {
   return (
     <section id="about" className="py-5" style={{ backgroundColor: '#fff8dc' }}>

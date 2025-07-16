@@ -1,5 +1,4 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Products from './components/Products'
@@ -9,15 +8,6 @@ import ContactPage from './pages/Contact'
 
 function App() {
   const location = useLocation()
-
-  useEffect(() => {
-    if (location.pathname === '/' && location.state?.scrollTo) {
-      const el = document.getElementById(location.state.scrollTo)
-      if (el) {
-        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100)
-      }
-    }
-  }, [location])
 
   return (
     <>

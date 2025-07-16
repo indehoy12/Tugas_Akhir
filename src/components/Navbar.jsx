@@ -1,21 +1,10 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
 
 const Navbar = () => {
   const location = useLocation()
   const navigate = useNavigate()
 
-  useEffect(() => {
-    const scrollTo = location.state?.scrollTo
-    if (location.pathname === '/' && scrollTo) {
-      const el = document.getElementById(scrollTo)
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: 'smooth' })
-        }, 300)
-      }
-    }
-  }, [location])
+
 
   const handleNavigate = (sectionId) => {
     if (location.pathname === '/') {
